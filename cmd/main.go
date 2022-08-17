@@ -32,6 +32,12 @@ func main() {
 	fmt.Println(res.Results)
 	for _, r := range res.Results {
 		fmt.Println(r.ID)
-		fmt.Println(r.Properties)
+		fmt.Println()
+		dpp := r.Properties.(notion.DatabasePageProperties)
+		for k, v := range dpp {
+			fmt.Println(k, v.Value())
+			fmt.Println()
+		}
+		fmt.Println()
 	}
 }
